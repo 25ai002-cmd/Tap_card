@@ -204,17 +204,6 @@ export const AuthModal = ({ isOpen, onClose, onLoginSuccess, reason = 'general' 
               <div ref={googleBtnRef} className="w-full flex justify-center min-h-[44px]" />
             </div>
 
-            {/* Trust & Verification Badges */}
-            <div className="pt-4 border-t border-slate-100 space-y-2">
-              <div className="flex items-center justify-center gap-2 text-xs font-semibold text-slate-700">
-                <ShieldCheck className="w-4 h-4 text-emerald-600" />
-                <span>Google OAuth 2.0 Verified Identity</span>
-              </div>
-              <p className="text-[11px] text-slate-400 font-mono">
-                Trusted Accounts Only · Client ID Protected
-              </p>
-            </div>
-
           </div>
         )}
 
