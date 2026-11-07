@@ -130,7 +130,7 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#f8fafc] text-slate-800 flex flex-col relative selection:bg-sky-500 selection:text-white">
+    <div className="min-h-screen w-full max-w-full overflow-x-hidden bg-[#f8fafc] text-slate-800 flex flex-col relative selection:bg-sky-500 selection:text-white">
       
       {/* Background subtle ambient glow */}
       <div className="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
@@ -149,7 +149,7 @@ export function App() {
       />
 
       {/* Main Content Sections */}
-      <main className="flex-1">
+      <main className="flex-1 w-full max-w-full overflow-x-hidden">
         {/* 1. Hero with Interactive Glassmorphism Visualizer */}
         <Hero
           siteContent={siteContent}

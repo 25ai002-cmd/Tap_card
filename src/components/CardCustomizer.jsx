@@ -129,8 +129,8 @@ export const CardCustomizer = ({ selectedProduct, onOpenSimulator, siteContent, 
   };
 
   return (
-    <section id="customizer" className="py-20 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="customizer" className="py-16 sm:py-20 relative overflow-hidden w-full max-w-full">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">

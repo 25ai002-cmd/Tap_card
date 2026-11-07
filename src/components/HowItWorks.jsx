@@ -4,11 +4,11 @@ import { HOW_IT_WORKS_STEPS } from '../data/initialData';
 
 export const HowItWorks = ({ onOpenSimulator }) => {
   return (
-    <section id="how-it-works" className="py-24 bg-white/70 backdrop-blur-md border-y border-slate-200/80 relative">
+    <section id="how-it-works" className="py-16 sm:py-24 bg-white/70 backdrop-blur-md border-y border-slate-200/80 relative overflow-hidden w-full max-w-full">
       {/* Background soft glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-sky-100/40 blur-[120px] rounded-full pointer-events-none -z-10" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">

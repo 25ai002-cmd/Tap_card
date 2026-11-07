@@ -284,16 +284,18 @@ export const SmartNfcCardMockup = ({ onOpenSimulator }) => {
         /* 3D Phone */
         .nfc-phone {
           position: absolute;
-          width: 118px;
+          width: 112px;
           aspect-ratio: 9 / 19;
-          border-radius: 22px;
+          border-radius: 20px;
           background: #111;
           padding: 5px;
           z-index: 5;
-          right: -150px;
-          top: -260px;
-          transform: rotate(18deg);
-          transition: all 0.7s cubic-bezier(.2, .8, .2, 1);
+          right: 6%;
+          top: -6%;
+          opacity: 0;
+          pointer-events: none;
+          transform: translate3d(60px, -120px, 0) rotate(18deg) scale(0.85);
+          transition: all 0.65s cubic-bezier(.2, .8, .2, 1);
           box-shadow: 0 30px 50px -20px rgba(0,0,0,.5);
         }
         .nfc-phone .screen {
@@ -352,9 +354,9 @@ export const SmartNfcCardMockup = ({ onOpenSimulator }) => {
           font-family: var(--mono);
         }
         .nfc-stage.phone-in .nfc-phone {
-          right: 6%;
-          top: -6%;
-          transform: rotate(-8deg);
+          opacity: 1;
+          pointer-events: auto;
+          transform: translate3d(0, 0, 0) rotate(-8deg) scale(1);
         }
         .nfc-stage.is-read .nfc-phone .sc-icon {
           transform: scale(1);
@@ -405,17 +407,17 @@ export const SmartNfcCardMockup = ({ onOpenSimulator }) => {
           .nfc-stage {
             padding: 22px 10px 26px;
             border-radius: 14px;
+            contain: paint;
           }
           .nfc-phone {
-            width: 95px;
-            border-radius: 17px;
-            right: -120px;
-            top: -210px;
-          }
-          .nfc-stage.phone-in .nfc-phone {
+            width: 90px;
+            border-radius: 16px;
             right: 2%;
             top: -4%;
-            transform: rotate(-6deg);
+            transform: translate3d(50px, -80px, 0) rotate(16deg) scale(0.8);
+          }
+          .nfc-stage.phone-in .nfc-phone {
+            transform: translate3d(0, 0, 0) rotate(-6deg) scale(1);
           }
           .nfc-chipc {
             width: 32px;
@@ -428,7 +430,7 @@ export const SmartNfcCardMockup = ({ onOpenSimulator }) => {
         }
       `}</style>
 
-      <main className="nfc-mockup-panel select-none">
+      <main className="nfc-mockup-panel select-none overflow-hidden max-w-full">
         {/* Header */}
         <header className="mb-4">
           <h1 className="text-xl font-bold tracking-tight text-[#17171a] font-sans">

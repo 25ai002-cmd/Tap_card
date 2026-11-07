@@ -6,15 +6,15 @@ export const Hero = ({ siteContent, onOpenSimulator, onOpenInquire }) => {
   const hero = siteContent?.hero || {};
 
   return (
-    <section className="relative pt-28 pb-14 sm:pt-36 sm:pb-20 md:pt-40 md:pb-28 overflow-hidden">
+    <section className="relative pt-28 pb-14 sm:pt-36 sm:pb-20 md:pt-40 md:pb-28 overflow-hidden w-full max-w-full">
       {/* Subtle modern geometric background grid */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] [mask-image:radial-gradient(ellipse_60%_55%_at_50%_0%,#000_70%,transparent_100%)] opacity-45 pointer-events-none -z-10" />
 
       {/* Ambient background glows for White Glassmorphism */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[450px] bg-gradient-to-tr from-sky-300/35 via-cyan-200/25 to-blue-300/20 blur-[140px] rounded-full pointer-events-none -z-10" />
-      <div className="absolute top-1/3 right-10 w-[450px] h-[450px] bg-indigo-200/20 blur-[130px] rounded-full pointer-events-none -z-10" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[450px] bg-gradient-to-tr from-sky-300/35 via-cyan-200/25 to-blue-300/20 blur-[140px] rounded-full pointer-events-none -z-10 overflow-hidden" />
+      <div className="absolute top-1/3 right-0 w-[450px] h-[450px] bg-indigo-200/20 blur-[130px] rounded-full pointer-events-none -z-10 overflow-hidden" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-10 items-center">
           
           {/* Left Column: Headline, Value Proposition, Action CTAs */}

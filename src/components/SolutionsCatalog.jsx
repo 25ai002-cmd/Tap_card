@@ -17,11 +17,11 @@ export const SolutionsCatalog = ({ products, onSelectProductForCustomizer, onOpe
     : products.filter(p => p.category === activeCategory);
 
   return (
-    <section id="solutions" className="py-24 relative overflow-hidden">
+    <section id="solutions" className="py-16 sm:py-24 relative overflow-hidden w-full max-w-full">
       {/* Background ambient light */}
-      <div className="absolute top-1/3 -right-20 w-[500px] h-[500px] bg-sky-100/30 blur-[130px] rounded-full pointer-events-none -z-10" />
+      <div className="absolute top-1/3 right-0 w-[500px] h-[500px] bg-sky-100/30 blur-[130px] rounded-full pointer-events-none -z-10" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
