@@ -1,0 +1,41 @@
+# Render Blueprint Configuration (Infrastructure-as-Code)
+# Deploys the Node.js Express + React Vite platform connected to a free managed PostgreSQL instance.
+# Deploy with one click on Render: New -> Blueprint -> Connect Repository.
+
+services:
+  # 1. Full-Stack Web Service (Node.js API + Static React Frontend)
+  - type: web
+    name: tapcard-platform
+    env: node
+    plan: free
+    region: oregon
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: DATABASE_URL
+        fromDatabase:
+          name: tapcard-postgres
+          property: connectionString
+      - key: VITE_GOOGLE_CLIENT_ID
+        sync: false
+      - key: VITE_BREVO_API_KEY
+        sync: false
+      - key: VITE_OWNER_EMAIL
+        value: yakshbarot597@gmail.com
+      - key: VITE_BREVO_SENDER_EMAIL
+        value: yakshbarot597@gmail.com
+      - key: VITE_BREVO_SENDER_NAME
+        value: Tap Card Studio
+
+databases:
+  # 2. Managed PostgreSQL Database Instance
+  - name: tapcard-postgres
+    plan: free
+    region: oregon
+    databaseName: tapcard_db
+    user: tapcard_user
