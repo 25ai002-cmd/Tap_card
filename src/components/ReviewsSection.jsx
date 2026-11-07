@@ -50,7 +50,7 @@ export const ReviewsSection = ({ reviews, onOpenReviewModal, onPlayVideo }) => {
           </div>
 
           {/* Quick Rating Summary & Write Review Button */}
-          <div className="flex flex-wrap items-center gap-4">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 w-full md:w-auto">
             {totalCount > 0 ? (
               <div className="p-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-md flex items-center gap-3.5">
                 <div className="text-2xl font-black font-heading text-slate-900">{averageRating}</div>
@@ -72,7 +72,7 @@ export const ReviewsSection = ({ reviews, onOpenReviewModal, onPlayVideo }) => {
 
             <button
               onClick={onOpenReviewModal}
-              className="glass-button-primary px-5 py-3 rounded-xl text-xs sm:text-sm font-bold text-white inline-flex items-center gap-2 shadow-md"
+              className="glass-button-primary w-full sm:w-auto px-5 py-3 rounded-xl text-xs sm:text-sm font-bold text-white inline-flex items-center justify-center gap-2 shadow-md"
             >
               <MessageSquarePlus className="w-4 h-4" />
               <span>Write Review / Add Video</span>

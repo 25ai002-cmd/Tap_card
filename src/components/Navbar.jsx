@@ -50,17 +50,17 @@ export const Navbar = ({ onOpenAuth, onOpenAdmin, onOpenReview, onOpenInquire, o
         <div className="flex items-center justify-between gap-3 sm:gap-4">
           
           {/* Logo: Tap Card */}
-          <a href="#" className="flex items-center gap-2.5 group shrink-0">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-sky-500 to-blue-600 flex items-center justify-center text-white shadow-md shadow-sky-500/25 group-hover:scale-105 transition-transform">
+          <a href="#" className="flex items-center gap-2 group shrink-0">
+            <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-tr from-sky-500 to-blue-600 flex items-center justify-center text-white shadow-md shadow-sky-500/25 group-hover:scale-105 transition-transform">
               <Radio className="w-4 h-4 text-white" />
             </div>
             <div>
-              <div className="flex items-center gap-1.5 leading-none">
-                <span className="text-lg font-extrabold font-heading text-slate-900 tracking-tight">
+              <div className="flex items-center gap-1 leading-none">
+                <span className="text-base sm:text-lg font-extrabold font-heading text-slate-900 tracking-tight">
                   Tap Card
                 </span>
               </div>
-              <p className="text-[9px] text-slate-400 tracking-wider uppercase font-semibold mt-0.5">Smart Cards</p>
+              <p className="text-[8px] sm:text-[9px] text-slate-400 tracking-wider uppercase font-semibold mt-0.5">Smart Cards</p>
             </div>
           </a>
 
@@ -91,17 +91,17 @@ export const Navbar = ({ onOpenAuth, onOpenAdmin, onOpenReview, onOpenInquire, o
 
             {/* Customer Authentication State */}
             {user ? (
-              <div className="flex items-center gap-1.5 bg-slate-50 border border-slate-200/80 rounded-full pl-1 pr-1.5 py-1 shadow-xs">
+              <div className="flex items-center gap-1 sm:gap-1.5 bg-slate-50 border border-slate-200/80 rounded-full pl-1 pr-1.5 py-1 shadow-xs">
                 <button
                   type="button"
                   onClick={onOpenUserAccount}
-                  className="flex items-center gap-1.5 hover:bg-slate-200/60 rounded-full pl-0.5 pr-2 py-0.5 transition-colors cursor-pointer"
+                  className="flex items-center gap-1.5 hover:bg-slate-200/60 rounded-full pl-0.5 pr-1.5 sm:pr-2 py-0.5 transition-colors cursor-pointer"
                   title="View My Private Quotes & Account"
                 >
                   {user.avatar ? (
-                    <img src={user.avatar} alt={user.name} className="w-6 h-6 rounded-full object-cover ring-1 ring-emerald-500/40" />
+                    <img src={user.avatar} alt={user.name} className="w-5 h-5 sm:w-6 sm:h-6 rounded-full object-cover ring-1 ring-emerald-500/40" />
                   ) : (
-                    <div className="w-6 h-6 rounded-full bg-gradient-to-tr from-sky-600 to-blue-700 text-white flex items-center justify-center font-bold text-[10px] shadow-xs">
+                    <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-gradient-to-tr from-sky-600 to-blue-700 text-white flex items-center justify-center font-bold text-[9px] sm:text-[10px] shadow-xs">
                       {user.name ? user.name.charAt(0).toUpperCase() : 'U'}
                     </div>
                   )}
@@ -123,9 +123,9 @@ export const Navbar = ({ onOpenAuth, onOpenAdmin, onOpenReview, onOpenInquire, o
             ) : (
               <button
                 onClick={() => onOpenAuth('general')}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold text-slate-700 hover:text-slate-900 bg-slate-100/70 hover:bg-slate-100 border border-slate-200/60 transition-all hover:shadow-xs"
+                className="inline-flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-full text-[11px] sm:text-xs font-semibold text-slate-700 hover:text-slate-900 bg-slate-100/70 hover:bg-slate-100 border border-slate-200/60 transition-all hover:shadow-xs"
               >
-                <Lock className="w-3.5 h-3.5 text-sky-600" />
+                <Lock className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-sky-600" />
                 <span>Sign In</span>
               </button>
             )}
@@ -134,7 +134,7 @@ export const Navbar = ({ onOpenAuth, onOpenAdmin, onOpenReview, onOpenInquire, o
             {isAdmin && (
               <button
                 onClick={onOpenAdmin}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold transition-all bg-sky-50 text-sky-800 border border-sky-300 hover:bg-sky-100"
+                className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-full text-[11px] sm:text-xs font-semibold transition-all bg-sky-50 text-sky-800 border border-sky-300 hover:bg-sky-100"
                 title="Admin Dashboard"
               >
                 <ShieldCheck className="w-3.5 h-3.5 text-sky-600" />
@@ -145,10 +145,10 @@ export const Navbar = ({ onOpenAuth, onOpenAdmin, onOpenReview, onOpenInquire, o
             {/* Inquire CTA Button */}
             <button
               onClick={onOpenInquire}
-              className="px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs font-bold text-white tracking-wide shadow-md shadow-sky-500/25 bg-gradient-to-r from-sky-500 via-blue-600 to-indigo-600 hover:opacity-95 hover:shadow-sky-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all inline-flex items-center gap-1.5"
+              className="px-2.5 xs:px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-bold text-white tracking-wide shadow-md shadow-sky-500/25 bg-gradient-to-r from-sky-500 via-blue-600 to-indigo-600 hover:opacity-95 hover:shadow-sky-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all inline-flex items-center gap-1 sm:gap-1.5"
             >
-              <span>Request Quote</span>
-              <ArrowRight className="w-3.5 h-3.5" />
+              <span><span className="hidden xs:inline">Request </span>Quote</span>
+              <ArrowRight className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
             </button>
 
             {/* Mobile Menu Hamburger */}

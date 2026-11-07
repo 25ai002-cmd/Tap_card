@@ -149,7 +149,7 @@ export const CardCustomizer = ({ selectedProduct, onOpenSimulator, siteContent, 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
           {/* Left Column: Visual Card Preview & Deliverables Inclusions */}
-          <div className="lg:col-span-5 glass-panel p-6 sm:p-8 rounded-3xl sticky top-24 border border-slate-200/90 shadow-lg">
+          <div className="lg:col-span-5 glass-panel p-4 sm:p-6 lg:p-8 rounded-2xl sm:rounded-3xl lg:sticky lg:top-24 border border-slate-200/90 shadow-lg">
             <CardVisualizer
               cardColor={cardColor}
               material={material}
@@ -161,7 +161,7 @@ export const CardCustomizer = ({ selectedProduct, onOpenSimulator, siteContent, 
             />
 
             {/* WHAT YOU GET IN THE DELIVERABLE PACKAGE */}
-            <div className="mt-8 p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+            <div className="mt-6 sm:mt-8 p-4 sm:p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
               <div className="flex items-center gap-2 pb-2 border-b border-slate-100">
                 <Package className="w-4 h-4 text-sky-600" />
                 <h4 className="text-xs font-bold font-heading uppercase tracking-wider text-slate-900">
@@ -207,7 +207,7 @@ export const CardCustomizer = ({ selectedProduct, onOpenSimulator, siteContent, 
           </div>
 
           {/* Right Column: Customizer Controls & Inquiry Form (NO PRICES) */}
-          <div className="lg:col-span-7 glass-panel p-6 sm:p-8 rounded-3xl border border-slate-200/90 shadow-lg">
+          <div className="lg:col-span-7 glass-panel p-4 sm:p-6 lg:p-8 rounded-2xl sm:rounded-3xl border border-slate-200/90 shadow-lg">
             
             {isSubmitted ? (
               <div className="text-center py-12 space-y-4 animate-fadeIn">
@@ -510,23 +510,23 @@ export const CardCustomizer = ({ selectedProduct, onOpenSimulator, siteContent, 
                 </div>
 
                 {/* Action Buttons */}
-                <div className="pt-2 flex flex-wrap items-center gap-3">
+                <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
                   {currentUser ? (
                     <button
                       type="submit"
                       disabled={submitting}
-                      className="flex-1 glass-button-primary py-3.5 px-6 rounded-xl text-xs sm:text-sm font-semibold text-white inline-flex items-center justify-center gap-2 shadow-sm"
+                      className="w-full sm:flex-1 glass-button-primary py-3.5 px-5 rounded-xl text-xs sm:text-sm font-semibold text-white inline-flex items-center justify-center gap-2 shadow-sm text-center"
                     >
-                      <Send className="w-4 h-4" />
+                      <Send className="w-4 h-4 shrink-0" />
                       <span>{submitting ? 'Transmitting via Brevo...' : 'Submit Inquiry & Send via Brevo Email'}</span>
                     </button>
                   ) : (
                     <button
                       type="button"
                       onClick={() => onRequireLogin('inquiry')}
-                      className="flex-1 py-3.5 px-6 rounded-xl text-xs sm:text-sm font-semibold bg-amber-500 hover:bg-amber-600 text-white inline-flex items-center justify-center gap-2 shadow-sm transition-colors"
+                      className="w-full sm:flex-1 py-3.5 px-5 rounded-xl text-xs sm:text-sm font-semibold bg-amber-500 hover:bg-amber-600 text-white inline-flex items-center justify-center gap-2 shadow-sm transition-colors text-center"
                     >
-                      <Lock className="w-4 h-4" />
+                      <Lock className="w-4 h-4 shrink-0" />
                       <span>Sign In with Google or Email to Send Inquiry</span>
                     </button>
                   )}
@@ -534,9 +534,9 @@ export const CardCustomizer = ({ selectedProduct, onOpenSimulator, siteContent, 
                   <button
                     type="button"
                     onClick={handleWhatsAppInquiry}
-                    className="glass-button-secondary py-3.5 px-5 rounded-xl text-xs sm:text-sm font-semibold text-emerald-700 hover:text-emerald-800 inline-flex items-center justify-center gap-2 border-emerald-300 hover:border-emerald-400"
+                    className="w-full sm:w-auto glass-button-secondary py-3.5 px-5 rounded-xl text-xs sm:text-sm font-semibold text-emerald-700 hover:text-emerald-800 inline-flex items-center justify-center gap-2 border-emerald-300 hover:border-emerald-400"
                   >
-                    <MessageCircle className="w-4 h-4 text-emerald-600" />
+                    <MessageCircle className="w-4 h-4 text-emerald-600 shrink-0" />
                     <span>Chat on WhatsApp</span>
                   </button>
                 </div>

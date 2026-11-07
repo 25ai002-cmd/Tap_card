@@ -21,14 +21,14 @@ export const ComparisonSection = ({ onOpenInquire }) => {
         </div>
 
         {/* Comparison Table */}
-        <div className="bg-white rounded-3xl border border-slate-200/90 shadow-xl overflow-hidden">
-          <div className="overflow-x-auto">
-            <table className="w-full text-left border-collapse">
+        <div className="bg-white rounded-2xl sm:rounded-3xl border border-slate-200/90 shadow-xl overflow-hidden">
+          <div className="overflow-x-auto scrollbar-thin">
+            <table className="w-full min-w-[560px] text-left border-collapse">
               <thead>
-                <tr className="bg-slate-50/80 border-b border-slate-200/90 text-xs font-bold uppercase tracking-wider text-slate-700">
-                  <th className="p-5 sm:p-6 w-1/4">Key Capability</th>
-                  <th className="p-5 sm:p-6 w-3/8 text-slate-500 font-semibold">Traditional Paper Cards</th>
-                  <th className="p-5 sm:p-6 w-3/8 bg-gradient-to-r from-sky-50 to-blue-50/60 text-sky-900 font-black border-l border-sky-200/70">
+                <tr className="bg-slate-50/80 border-b border-slate-200/90 text-[11px] sm:text-xs font-bold uppercase tracking-wider text-slate-700">
+                  <th className="p-4 sm:p-6 w-1/4">Key Capability</th>
+                  <th className="p-4 sm:p-6 w-3/8 text-slate-500 font-semibold">Traditional Paper Cards</th>
+                  <th className="p-4 sm:p-6 w-3/8 bg-gradient-to-r from-sky-50 to-blue-50/60 text-sky-900 font-black border-l border-sky-200/70">
                     <div className="flex items-center gap-1.5">
                       <Sparkles className="w-4 h-4 text-sky-600" />
                       <span>Tap Card (Smart Contactless)</span>
@@ -39,10 +39,10 @@ export const ComparisonSection = ({ onOpenInquire }) => {
               <tbody className="divide-y divide-slate-100 text-xs sm:text-sm">
                 {COMPARISON_FEATURES.map((row, idx) => (
                   <tr key={idx} className="hover:bg-slate-50/70 transition-colors">
-                    <td className="p-5 sm:p-6 font-bold text-slate-900 bg-slate-50/30">
+                    <td className="p-4 sm:p-6 font-bold text-slate-900 bg-slate-50/30">
                       {row.feature}
                     </td>
-                    <td className="p-5 sm:p-6 text-slate-500">
+                    <td className="p-4 sm:p-6 text-slate-500">
                       <div className="flex items-start gap-2.5">
                         <div className="w-5 h-5 rounded-full bg-red-50 border border-red-200 flex items-center justify-center text-red-500 shrink-0 mt-0.5">
                           <X className="w-3.5 h-3.5" />
@@ -50,7 +50,7 @@ export const ComparisonSection = ({ onOpenInquire }) => {
                         <span>{row.paper}</span>
                       </div>
                     </td>
-                    <td className="p-5 sm:p-6 text-slate-800 bg-sky-50/20 font-semibold border-l border-sky-100">
+                    <td className="p-4 sm:p-6 text-slate-800 bg-sky-50/20 font-semibold border-l border-sky-100">
                       <div className="flex items-start gap-2.5">
                         <div className="w-5 h-5 rounded-full bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600 shrink-0 mt-0.5 shadow-sm">
                           <Check className="w-3.5 h-3.5" />
@@ -65,14 +65,14 @@ export const ComparisonSection = ({ onOpenInquire }) => {
           </div>
 
           {/* Table Footer Callout */}
-          <div className="p-6 sm:p-8 bg-slate-50/90 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-5">
+          <div className="p-5 sm:p-8 bg-slate-50/90 border-t border-slate-200 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 sm:gap-5">
             <div>
               <p className="text-sm font-bold text-slate-900">Ready to equip yourself or your company?</p>
               <p className="text-xs text-slate-500 mt-1">We provide individual cards, executive sets, and corporate bulk packs with custom vector engraving.</p>
             </div>
             <button
               onClick={onOpenInquire}
-              className="glass-button-primary px-5 py-3 rounded-xl text-xs font-bold text-white inline-flex items-center gap-2 shadow-md whitespace-nowrap"
+              className="glass-button-primary w-full sm:w-auto px-5 py-3 rounded-xl text-xs font-bold text-white inline-flex items-center justify-center gap-2 shadow-md whitespace-nowrap text-center"
             >
               <span>Request Custom Proof & Quote</span>
               <ArrowRight className="w-3.5 h-3.5" />

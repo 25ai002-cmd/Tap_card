@@ -59,7 +59,7 @@ export const SolutionsCatalog = ({ products, onSelectProductForCustomizer, onOpe
           {filteredProducts.map((product) => (
             <div
               key={product.id}
-              className="glass-card rounded-3xl p-7 sm:p-9 flex flex-col justify-between relative overflow-hidden group border border-slate-200/90 hover:border-sky-300 transition-all duration-300 shadow-sm hover:shadow-xl hover:-translate-y-1.5"
+              className="glass-card rounded-2xl sm:rounded-3xl p-5 sm:p-7 lg:p-9 flex flex-col justify-between relative overflow-hidden group border border-slate-200/90 hover:border-sky-300 transition-all duration-300 shadow-sm hover:shadow-xl hover:-translate-y-1.5"
             >
               <div>
                 {/* Header Badge */}
@@ -130,10 +130,10 @@ export const SolutionsCatalog = ({ products, onSelectProductForCustomizer, onOpe
               </div>
 
               {/* Actions Footer */}
-              <div className="mt-8 pt-5 border-t border-slate-200 flex flex-wrap items-center justify-between gap-3">
+              <div className="mt-8 pt-5 border-t border-slate-200 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5 sm:gap-3">
                 <button
                   onClick={() => onSelectProductForCustomizer(product)}
-                  className="glass-button-primary px-4 py-2.5 rounded-xl text-xs font-bold text-white inline-flex items-center gap-2 shadow-md"
+                  className="glass-button-primary w-full sm:w-auto px-4 py-2.5 rounded-xl text-xs font-bold text-white inline-flex items-center justify-center gap-2 shadow-md"
                 >
                   <span>Select Plan & Configure</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -141,7 +141,7 @@ export const SolutionsCatalog = ({ products, onSelectProductForCustomizer, onOpe
 
                 <button
                   onClick={() => onOpenInquire(product)}
-                  className="glass-button-secondary px-4 py-2.5 rounded-xl text-xs font-semibold text-slate-700 hover:text-slate-900"
+                  className="glass-button-secondary w-full sm:w-auto px-4 py-2.5 rounded-xl text-xs font-semibold text-slate-700 hover:text-slate-900 text-center"
                 >
                   Request Plan Quote
                 </button>

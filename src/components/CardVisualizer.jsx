@@ -19,15 +19,15 @@ export const CardVisualizer = ({
   const bgStyle = getCardBackgroundStyle(cardColor);
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center w-full">
       {/* 3D Flip Card Container */}
       <div 
-        className="w-full max-w-[390px] h-[235px] sm:h-[245px] perspective cursor-pointer select-none group"
+        className="w-full max-w-[390px] h-[215px] xs:h-[230px] sm:h-[245px] perspective cursor-pointer select-none group"
         onClick={() => setFlipped(!flipped)}
         title="Click to flip card"
       >
         <div 
-          className={`relative w-full h-full rounded-2xl p-6 transition-all duration-700 transform-style-3d border ${fontTheme.cardBorder} ${
+          className={`relative w-full h-full rounded-2xl p-4 sm:p-6 transition-all duration-700 transform-style-3d border ${fontTheme.cardBorder} ${
             flipped ? 'rotate-y-180' : ''
           }`}
           style={bgStyle}
@@ -36,11 +36,11 @@ export const CardVisualizer = ({
           <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-transparent via-white/10 to-transparent pointer-events-none opacity-80" />
 
           {/* FRONT OF CARD */}
-          <div className={`absolute inset-0 p-6 flex flex-col justify-between backface-hidden ${flipped ? 'hidden' : 'flex'}`}>
+          <div className={`absolute inset-0 p-4 sm:p-6 flex flex-col justify-between backface-hidden ${flipped ? 'hidden' : 'flex'}`}>
             {/* Top row: Minimalist Contactless Wave Icon & Optional Logo */}
             <div className="flex items-center justify-between">
               <div 
-                className="w-9 h-9 rounded-xl flex items-center justify-center border shadow-xs transition-colors"
+                className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl flex items-center justify-center border shadow-xs transition-colors"
                 style={{
                   borderColor: fontTheme.chipBorder,
                   backgroundColor: fontTheme.chipBg,
@@ -52,10 +52,10 @@ export const CardVisualizer = ({
               
               {/* Optional Company Logo or Minimal Brand Label */}
               {logoUrl ? (
-                <img src={logoUrl} alt="Logo" className="h-8 max-w-[110px] object-contain rounded drop-shadow-sm" />
+                <img src={logoUrl} alt="Logo" className="h-7 sm:h-8 max-w-[100px] sm:max-w-[110px] object-contain rounded drop-shadow-sm" />
               ) : (
                 <span 
-                  className="font-mono text-[10px] tracking-widest uppercase font-semibold opacity-70"
+                  className="font-mono text-[9px] sm:text-[10px] tracking-widest uppercase font-semibold opacity-70"
                   style={{ color: fontTheme.subtext }}
                 >
                   TAP CARD
@@ -64,15 +64,15 @@ export const CardVisualizer = ({
             </div>
 
             {/* Middle: Business / Cardholder Name & Purpose Plan */}
-            <div className="my-auto py-2">
+            <div className="my-auto py-1 sm:py-2">
               <h3 
-                className="text-xl sm:text-2xl font-extrabold font-heading tracking-tight truncate drop-shadow-xs transition-colors"
+                className="text-lg xs:text-xl sm:text-2xl font-extrabold font-heading tracking-tight truncate drop-shadow-xs transition-colors"
                 style={{ color: fontTheme.text }}
               >
                 {businessName || "Your Business Name"}
               </h3>
               <p 
-                className="text-xs mt-1.5 font-semibold flex items-center gap-1.5 transition-colors"
+                className="text-[11px] sm:text-xs mt-1 sm:mt-1.5 font-semibold flex items-center gap-1.5 transition-colors"
                 style={{ color: fontTheme.accent }}
               >
                 <Sparkles className="w-3.5 h-3.5 shrink-0" />
@@ -82,13 +82,13 @@ export const CardVisualizer = ({
 
             {/* Bottom Row: Phone Number & Click to Flip */}
             <div 
-              className="flex items-center justify-between pt-3 border-t transition-colors"
+              className="flex items-center justify-between pt-2 sm:pt-3 border-t transition-colors"
               style={{ borderColor: fontTheme.border }}
             >
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-1.5 sm:gap-2">
                 <Phone className="w-3.5 h-3.5 shrink-0" style={{ color: fontTheme.accent }} />
                 <span 
-                  className="text-xs font-mono font-bold tracking-wider"
+                  className="text-[11px] sm:text-xs font-mono font-bold tracking-wider"
                   style={{ color: fontTheme.text }}
                 >
                   {phone || "+91 98765 43210"}
@@ -96,7 +96,7 @@ export const CardVisualizer = ({
               </div>
 
               <div 
-                className="text-right flex items-center gap-1 text-[11px] font-mono transition-colors"
+                className="text-right flex items-center gap-1 text-[10px] sm:text-[11px] font-mono transition-colors"
                 style={{ color: fontTheme.accent }}
               >
                 <RotateCw className="w-3 h-3 group-hover:rotate-180 transition-transform duration-500" />
@@ -106,7 +106,7 @@ export const CardVisualizer = ({
           </div>
 
           {/* BACK OF CARD */}
-          <div className={`absolute inset-0 p-6 flex flex-col justify-between backface-hidden rotate-y-180 ${!flipped ? 'hidden' : 'flex'}`}>
+          <div className={`absolute inset-0 p-4 sm:p-6 flex flex-col justify-between backface-hidden rotate-y-180 ${!flipped ? 'hidden' : 'flex'}`}>
             <div className="flex items-center justify-end">
               <div 
                 className="w-7 h-7 rounded-lg flex items-center justify-center border shadow-xs"
@@ -121,21 +121,21 @@ export const CardVisualizer = ({
             </div>
 
             {/* Center: Backup QR Code & Instructions */}
-            <div className="flex items-center justify-center gap-4 my-auto">
+            <div className="flex items-center justify-center gap-3 sm:gap-4 my-auto">
               {showQr && (
-                <div className="p-2.5 rounded-2xl bg-white text-slate-900 shadow-md border border-slate-200 ring-2 ring-black/5">
-                  <QrCode className="w-14 h-14" />
+                <div className="p-2 sm:p-2.5 rounded-xl sm:rounded-2xl bg-white text-slate-900 shadow-md border border-slate-200 ring-2 ring-black/5 shrink-0">
+                  <QrCode className="w-11 h-11 sm:w-14 sm:h-14" />
                 </div>
               )}
               <div className="text-left">
                 <p className="text-xs font-bold" style={{ color: fontTheme.text }}>
                   Instant Phone Tap
                 </p>
-                <p className="text-[11px] mt-0.5 font-mono font-bold" style={{ color: fontTheme.accent }}>
+                <p className="text-[10px] sm:text-[11px] mt-0.5 font-mono font-bold" style={{ color: fontTheme.accent }}>
                   {phone || "+91 98765 43210"}
                 </p>
                 <p 
-                  className="text-[10px] mt-1 max-w-[160px] leading-relaxed font-medium"
+                  className="text-[9px] sm:text-[10px] mt-1 max-w-[160px] leading-relaxed font-medium"
                   style={{ color: fontTheme.subtext }}
                 >
                   Hold near any phone within 3cm to trigger instantly.

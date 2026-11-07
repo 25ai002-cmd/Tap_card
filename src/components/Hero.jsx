@@ -6,7 +6,7 @@ export const Hero = ({ siteContent, onOpenSimulator, onOpenInquire }) => {
   const hero = siteContent?.hero || {};
 
   return (
-    <section className="relative pt-32 pb-16 md:pt-40 md:pb-28 overflow-hidden">
+    <section className="relative pt-28 pb-14 sm:pt-36 sm:pb-20 md:pt-40 md:pb-28 overflow-hidden">
       {/* Subtle modern geometric background grid */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] [mask-image:radial-gradient(ellipse_60%_55%_at_50%_0%,#000_70%,transparent_100%)] opacity-45 pointer-events-none -z-10" />
 
@@ -15,12 +15,12 @@ export const Hero = ({ siteContent, onOpenSimulator, onOpenInquire }) => {
       <div className="absolute top-1/3 right-10 w-[450px] h-[450px] bg-indigo-200/20 blur-[130px] rounded-full pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-10 items-center">
           
           {/* Left Column: Headline, Value Proposition, Action CTAs */}
-          <div className="lg:col-span-7 space-y-7 text-center lg:text-left">
+          <div className="lg:col-span-7 space-y-6 sm:space-y-7 text-center lg:text-left">
             {/* Main Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-heading text-slate-900 tracking-tight leading-[1.12]">
+            <h1 className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-extrabold font-heading text-slate-900 tracking-tight leading-[1.14]">
               Precision Contactless Cards for{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-600 via-blue-600 to-indigo-700">
                 Google Reviews, Portfolios
@@ -29,12 +29,12 @@ export const Hero = ({ siteContent, onOpenSimulator, onOpenInquire }) => {
             </h1>
 
             {/* Subtitle */}
-            <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
+            <p className="text-sm sm:text-base lg:text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
               {hero.subtitle || "Custom-manufactured contactless hardware for businesses, freelancers, and creative studios. Choose your card plan — Google reviews, creative portfolios, company websites with QR codes, or lead generation forms. One-time hardware purchase with lifetime smart tap access."}
             </p>
 
             {/* Concrete Key Value Pillars */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1 text-left max-w-xl mx-auto lg:mx-0">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3 pt-1 text-left max-w-xl mx-auto lg:mx-0">
               <div className="flex items-center gap-2.5 text-xs font-semibold text-slate-700 bg-white/60 p-2.5 rounded-xl border border-slate-200/70 shadow-[0_1px_2px_rgba(0,0,0,0.02)] backdrop-blur-sm">
                 <CheckCircle2 className="w-4 h-4 text-sky-600 shrink-0" />
                 <span>One-Time Hardware, Lifetime Card Validity</span>
@@ -54,10 +54,10 @@ export const Hero = ({ siteContent, onOpenSimulator, onOpenInquire }) => {
             </div>
 
             {/* CTAs */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3.5 pt-2">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3 sm:gap-3.5 pt-2">
               <a
                 href="#customizer"
-                className="glass-button-primary px-7 py-3.5 rounded-xl text-sm font-semibold text-white inline-flex items-center gap-2 shadow-lg group"
+                className="glass-button-primary w-full sm:w-auto px-7 py-3.5 rounded-xl text-sm font-semibold text-white inline-flex items-center justify-center gap-2 shadow-lg group"
               >
                 <span>Configure Your Hardware</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -65,7 +65,7 @@ export const Hero = ({ siteContent, onOpenSimulator, onOpenInquire }) => {
 
               <button
                 onClick={onOpenSimulator}
-                className="glass-button-secondary px-6 py-3.5 rounded-xl text-sm font-semibold text-slate-800 hover:text-slate-900 inline-flex items-center gap-2 shadow-sm"
+                className="glass-button-secondary w-full sm:w-auto px-6 py-3.5 rounded-xl text-sm font-semibold text-slate-800 hover:text-slate-900 inline-flex items-center justify-center gap-2 shadow-sm"
               >
                 <Zap className="w-4 h-4 text-sky-600" />
                 <span>Test Live Tap Demo</span>

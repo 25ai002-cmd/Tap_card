@@ -29,7 +29,7 @@ export const HowItWorks = ({ onOpenSimulator }) => {
           {HOW_IT_WORKS_STEPS.map((step, idx) => (
             <div 
               key={step.step}
-              className="p-8 rounded-3xl bg-white border border-slate-200/90 hover:border-sky-300 transition-all duration-300 shadow-sm hover:shadow-xl hover:-translate-y-1 flex flex-col justify-between group"
+              className="p-6 sm:p-8 rounded-2xl sm:rounded-3xl bg-white border border-slate-200/90 hover:border-sky-300 transition-all duration-300 shadow-sm hover:shadow-xl hover:-translate-y-1 flex flex-col justify-between group"
             >
               <div>
                 <div className="flex items-center justify-between mb-6">
@@ -61,19 +61,19 @@ export const HowItWorks = ({ onOpenSimulator }) => {
         </div>
 
         {/* Bottom Interactive Demo Bar */}
-        <div className="mt-14 p-7 rounded-3xl bg-gradient-to-r from-slate-50 via-sky-50/40 to-slate-50 border border-slate-200/90 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-5 text-center sm:text-left">
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-center justify-center text-sky-600 shrink-0">
-              <Zap className="w-6 h-6 animate-pulse" />
+        <div className="mt-14 p-5 sm:p-7 rounded-2xl sm:rounded-3xl bg-gradient-to-r from-slate-50 via-sky-50/40 to-slate-50 border border-slate-200/90 shadow-sm flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 sm:gap-5 text-center sm:text-left">
+          <div className="flex items-center gap-3.5 sm:gap-4 text-left">
+            <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-white border border-slate-200 shadow-sm flex items-center justify-center text-sky-600 shrink-0">
+              <Zap className="w-5 h-5 sm:w-6 sm:h-6 animate-pulse" />
             </div>
             <div>
-              <h4 className="text-sm font-bold text-slate-900">Experience the live smartphone simulation</h4>
-              <p className="text-xs text-slate-600 mt-0.5">Test how Google reviews, visual portfolios, and contact cards instantly open on your phone.</p>
+              <h4 className="text-xs sm:text-sm font-bold text-slate-900">Experience the live smartphone simulation</h4>
+              <p className="text-[11px] sm:text-xs text-slate-600 mt-0.5">Test how Google reviews, visual portfolios, and contact cards instantly open on your phone.</p>
             </div>
           </div>
           <button
             onClick={onOpenSimulator}
-            className="glass-button-primary px-5 py-3 rounded-xl text-xs font-bold text-white whitespace-nowrap shadow-md inline-flex items-center gap-2 shrink-0"
+            className="glass-button-primary w-full sm:w-auto px-5 py-3 rounded-xl text-xs font-bold text-white whitespace-nowrap shadow-md inline-flex items-center justify-center gap-2 shrink-0 text-center"
           >
             <span>Launch Phone Simulator</span>
             <ArrowRight className="w-3.5 h-3.5" />

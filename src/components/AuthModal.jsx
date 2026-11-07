@@ -158,7 +158,7 @@ export const AuthModal = ({ isOpen, onClose, onLoginSuccess, reason = 'general' 
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm animate-fadeIn">
-      <div className="relative w-full max-w-md bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-2xl text-left max-h-[90vh] overflow-y-auto">
+      <div className="relative w-full max-w-md bg-white rounded-2xl sm:rounded-3xl p-4 xs:p-6 sm:p-8 border border-slate-200 shadow-2xl text-left max-h-[92vh] overflow-y-auto">
         
         {/* Close Button */}
         <button

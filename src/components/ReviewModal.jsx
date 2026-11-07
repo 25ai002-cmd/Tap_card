@@ -137,7 +137,7 @@ export const ReviewModal = ({ isOpen, onClose, currentUser, onRequireLogin }) =>
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm animate-fadeIn">
       <div 
         onClick={(e) => e.stopPropagation()}
-        className="relative w-full max-w-xl max-h-[90vh] overflow-y-auto glass-panel rounded-3xl p-6 sm:p-8 border border-slate-200/90 shadow-2xl bg-white"
+        className="relative w-full max-w-xl max-h-[92vh] overflow-y-auto glass-panel rounded-2xl sm:rounded-3xl p-4 xs:p-6 sm:p-8 border border-slate-200/90 shadow-2xl bg-white"
       >
         
         {/* Close button */}
