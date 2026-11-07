@@ -49,7 +49,7 @@ export const UserAccountModal = ({ isOpen, onClose, user, onLogout }) => {
               <span>{user.email}</span>
             </p>
             <p className="text-[10px] text-slate-400 mt-1 font-mono">
-              Account Security: {user.provider === 'google' ? 'Google OAuth 2.0 Protected' : 'Private Email & 256-bit Password Protected'}
+              Account Security: Google OAuth 2.0 Verified (Client ID Protected)
             </p>
           </div>
         </div>

@@ -176,7 +176,7 @@ export const ReviewModal = ({ isOpen, onClose, currentUser, onRequireLogin }) =>
               <div className="p-3 rounded-xl bg-amber-50 border border-amber-200 text-xs text-amber-900 flex items-center justify-between">
                 <span className="flex items-center gap-1.5">
                   <Lock className="w-4 h-4 text-amber-700 shrink-0" />
-                  <span>You must be signed in with your email to submit a review.</span>
+                  <span>You must be signed in with your Google account to submit a review.</span>
                 </span>
                 <button
                   type="button"
@@ -417,7 +417,7 @@ export const ReviewModal = ({ isOpen, onClose, currentUser, onRequireLogin }) =>
                   className="w-full py-3 rounded-xl text-xs sm:text-sm font-semibold bg-amber-500 hover:bg-amber-600 text-white shadow-md inline-flex items-center justify-center gap-2"
                 >
                   <Lock className="w-4 h-4" />
-                  <span>Sign In with Google or Email to Post Review</span>
+                  <span>Sign In with Google to Post Review</span>
                 </button>
               )}
             </div>

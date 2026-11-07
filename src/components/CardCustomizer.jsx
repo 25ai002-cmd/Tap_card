@@ -527,7 +527,7 @@ export const CardCustomizer = ({ selectedProduct, onOpenSimulator, siteContent, 
                       className="w-full sm:flex-1 py-3.5 px-5 rounded-xl text-xs sm:text-sm font-semibold bg-amber-500 hover:bg-amber-600 text-white inline-flex items-center justify-center gap-2 shadow-sm transition-colors text-center"
                     >
                       <Lock className="w-4 h-4 shrink-0" />
-                      <span>Sign In with Google or Email to Send Inquiry</span>
+                      <span>Sign In with Google to Send Inquiry</span>
                     </button>
                   )}
 
