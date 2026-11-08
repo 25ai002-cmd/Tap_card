@@ -10,7 +10,8 @@ import {
   Utensils, 
   Shirt, 
   Stethoscope, 
-  Star 
+  Star,
+  Globe
 } from 'lucide-react';
 
 export const Hero = ({ siteContent, onOpenSimulator, onOpenInquire }) => {
@@ -34,7 +35,7 @@ export const Hero = ({ siteContent, onOpenSimulator, onOpenInquire }) => {
             {/* Top Pill Announcement */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-50/90 border border-sky-200/90 text-sky-800 text-xs font-semibold shadow-xs">
               <TrendingUp className="w-3.5 h-3.5 text-sky-600 shrink-0" />
-              <span>{hero.badge || "Helping Businesses Scale & Build 5-Star Trust"}</span>
+              <span>{hero.badge || "Helping Businesses Grow • Google Reviews & Direct Website Tap"}</span>
             </div>
 
             {/* Main Headline */}
@@ -47,14 +48,14 @@ export const Hero = ({ siteContent, onOpenSimulator, onOpenInquire }) => {
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-600 via-blue-600 to-indigo-700">
                     Faster Google Reviews
                   </span>{' '}
-                  & Smart Customer Facilities.
+                  & Direct Website Access.
                 </>
               )}
             </h1>
 
             {/* Subtitle */}
             <p className="text-sm sm:text-base lg:text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
-              {hero.subtitle || "Customers look at Google reviews and available facilities before choosing a restaurant, clothing store, clinic, or hospital. We help your business collect 5-star Google reviews 10x faster at checkout, while giving customers instant contactless access to your digital menus, style catalogues, appointment booking, Wi-Fi, and location directions."}
+              {hero.subtitle || "People check Google reviews and visit websites before deciding where to dine, shop, or get treated. Whether you run a restaurant, fashion boutique, hospital, or clinic, our smart contactless cards help you get 5-star Google reviews faster at checkout and instantly open your official website with a single tap on any phone."}
             </p>
 
             {/* Industry-Specific Growth & Facilities Showcase */}
@@ -65,7 +66,7 @@ export const Hero = ({ siteContent, onOpenSimulator, onOpenInquire }) => {
                   <span>Tailored for High-Traffic Businesses:</span>
                 </span>
                 <span className="text-[10px] font-bold text-sky-700 bg-sky-50 px-2.5 py-0.5 rounded-full border border-sky-200">
-                  Reviews + Key Facilities on 1 Tap
+                  Google Reviews + Direct Website on 1 Tap
                 </span>
               </div>
 
@@ -79,7 +80,7 @@ export const Hero = ({ siteContent, onOpenSimulator, onOpenInquire }) => {
                     <span>Food & Restaurants</span>
                   </div>
                   <p className="text-[11px] text-slate-600 leading-snug">
-                    <strong className="text-amber-800">1-Tap Google Reviews</strong> on dining tables + <span className="text-slate-500">Instant Digital Menu, Daily Specials & Wi-Fi.</span>
+                    <strong className="text-amber-800">1-Tap Google Reviews</strong> on dining tables & bill counter + <span className="text-slate-600 font-medium">Directly opens your restaurant website or digital menu.</span>
                   </p>
                 </div>
 
@@ -92,7 +93,7 @@ export const Hero = ({ siteContent, onOpenSimulator, onOpenInquire }) => {
                     <span>Fashion & Dressing</span>
                   </div>
                   <p className="text-[11px] text-slate-600 leading-snug">
-                    <strong className="text-purple-800">Customer Style Ratings</strong> at checkout + <span className="text-slate-500">Digital Lookbook, Instagram Catalog & Offers.</span>
+                    <strong className="text-purple-800">1-Tap Google Reviews</strong> at cash counter + <span className="text-slate-600 font-medium">Directly opens your official brand website or clothing store.</span>
                   </p>
                 </div>
 
@@ -105,7 +106,7 @@ export const Hero = ({ siteContent, onOpenSimulator, onOpenInquire }) => {
                     <span>Hospitals & Clinics</span>
                   </div>
                   <p className="text-[11px] text-slate-600 leading-snug">
-                    <strong className="text-sky-800">Patient Trust Feedback</strong> on discharge + <span className="text-slate-500">Doctor Profiles, OPD Timings & Fast Booking.</span>
+                    <strong className="text-sky-800">1-Tap Google Reviews</strong> for patient trust + <span className="text-slate-600 font-medium">Directly opens your official hospital or clinic website.</span>
                   </p>
                 </div>
               </div>
@@ -115,11 +116,11 @@ export const Hero = ({ siteContent, onOpenSimulator, onOpenInquire }) => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3 pt-1 text-left max-w-xl mx-auto lg:mx-0">
               <div className="flex items-center gap-2.5 text-xs font-semibold text-slate-700 bg-white/60 p-2.5 rounded-xl border border-slate-200/70 shadow-[0_1px_2px_rgba(0,0,0,0.02)] backdrop-blur-sm">
                 <CheckCircle2 className="w-4 h-4 text-sky-600 shrink-0" />
-                <span>10x More 5-Star Google Reviews at Checkout</span>
+                <span>1-Tap 5-Star Google Reviews at Checkout</span>
               </div>
               <div className="flex items-center gap-2.5 text-xs font-semibold text-slate-700 bg-white/60 p-2.5 rounded-xl border border-slate-200/70 shadow-[0_1px_2px_rgba(0,0,0,0.02)] backdrop-blur-sm">
                 <CheckCircle2 className="w-4 h-4 text-sky-600 shrink-0" />
-                <span>Integrated Facilities (Menus, Bookings, Catalogs)</span>
+                <span>Direct Official Website Opening (0.1s Fast)</span>
               </div>
               <div className="flex items-center gap-2.5 text-xs font-semibold text-slate-700 bg-white/60 p-2.5 rounded-xl border border-slate-200/70 shadow-[0_1px_2px_rgba(0,0,0,0.02)] backdrop-blur-sm">
                 <CheckCircle2 className="w-4 h-4 text-sky-600 shrink-0" />

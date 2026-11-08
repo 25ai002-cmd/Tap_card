@@ -48,7 +48,8 @@ export const storage = {
         parsed?.hero?.announcement?.includes('NFC') || 
         parsed?.branding?.tagline?.includes('NFC') ||
         parsed?.hero?.title?.includes('Precision Contactless Cards for Reviews') ||
-        parsed?.hero?.title?.includes('Precision Contactless Cards for Google Reviews')
+        parsed?.hero?.title?.includes('Precision Contactless Cards for Google Reviews') ||
+        parsed?.hero?.title?.includes('Smart Customer Facilities')
       ) {
         localStorage.setItem(KEYS.SITE_CONTENT, JSON.stringify(INITIAL_SITE_CONTENT));
         return INITIAL_SITE_CONTENT;

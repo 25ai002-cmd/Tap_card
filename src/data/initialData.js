@@ -1,15 +1,15 @@
 export const INITIAL_SITE_CONTENT = {
   hero: {
-    badge: "Accelerate Business Growth & Reputation",
-    announcement: "Original High-Speed Chipset • 1-Tap Google Reviews & Facilities • Zero App Required",
-    title: "Helping Businesses Grow with Faster Google Reviews & Smart Customer Facilities.",
-    subtitle: "Customers check Google reviews and facilities before deciding where to dine, shop, or seek medical care. Whether you run a restaurant, fashion boutique, hospital, clinic, or local business, Tap Card helps you get 5-star Google reviews faster and more consistently, while offering instant access to your digital menus, style catalogues, appointment booking, and contact facilities with 1 contactless tap.",
+    badge: "Helping Businesses Grow • Google Reviews & Direct Website Tap",
+    announcement: "Original High-Speed Chipset • 1-Tap Google Reviews & Direct Website Opening • Zero App Required",
+    title: "Helping Businesses Grow with Faster Google Reviews & Direct Website Access.",
+    subtitle: "People check Google reviews and visit websites before deciding where to dine, shop, or get treated. Whether you run a restaurant, fashion boutique, hospital, or clinic, our smart contactless cards help you get 5-star Google reviews faster at checkout and instantly open your official website with a single tap on any phone.",
     heroImage: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
     ctaPrimary: "Configure Your Card",
     ctaSecondary: "See How It Works",
     highlights: [
       { title: "Faster Google Reviews", desc: "Customers tap to open the 5-star review screen in 0.1s without typing." },
-      { title: "Smart Business Facilities", desc: "Digital menus for restaurants, lookbooks for fashion, and bookings for clinics." },
+      { title: "Direct Website Opening", desc: "Instantly opens your official website or online store in their mobile browser." },
       { title: "Lifetime Smart Card", desc: "One-time hardware purchase with zero monthly subscription lock-in." },
       { title: "100% Phone Compatibility", desc: "Works seamlessly on all smartphones with instant contactless tap and QR backup." }
     ],
