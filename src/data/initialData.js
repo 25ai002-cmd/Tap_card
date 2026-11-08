@@ -1,17 +1,17 @@
 export const INITIAL_SITE_CONTENT = {
   hero: {
-    badge: "Next-Gen Contactless Hardware",
-    announcement: "Original High-Speed Chipset • Lifetime Card Validity • Zero App Required",
-    title: "Precision Contactless Cards for Reviews, Portfolios & Inquiries.",
-    subtitle: "Custom-manufactured contactless hardware for businesses, freelancers, and creative studios. Choose your card plan — Google reviews, creative portfolios, company websites with QR codes, or lead generation forms. One-time hardware purchase with lifetime smart tap access.",
+    badge: "Accelerate Business Growth & Reputation",
+    announcement: "Original High-Speed Chipset • 1-Tap Google Reviews & Facilities • Zero App Required",
+    title: "Helping Businesses Grow with Faster Google Reviews & Smart Customer Facilities.",
+    subtitle: "Customers check Google reviews and facilities before deciding where to dine, shop, or seek medical care. Whether you run a restaurant, fashion boutique, hospital, clinic, or local business, Tap Card helps you get 5-star Google reviews faster and more consistently, while offering instant access to your digital menus, style catalogues, appointment booking, and contact facilities with 1 contactless tap.",
     heroImage: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
     ctaPrimary: "Configure Your Card",
     ctaSecondary: "See How It Works",
     highlights: [
-      { title: "No App Required", desc: "Opens natively in standard browser on any phone." },
-      { title: "Lifetime Smart Card", desc: "Permanent chip access with zero subscription lock-in." },
-      { title: "Multiple Purpose Plans", desc: "Google Reviews, Portfolios, Full Websites, or Lead Capture." },
-      { title: "QR Code Backup", desc: "Works seamlessly on all smartphones with instant camera scan." }
+      { title: "Faster Google Reviews", desc: "Customers tap to open the 5-star review screen in 0.1s without typing." },
+      { title: "Smart Business Facilities", desc: "Digital menus for restaurants, lookbooks for fashion, and bookings for clinics." },
+      { title: "Lifetime Smart Card", desc: "One-time hardware purchase with zero monthly subscription lock-in." },
+      { title: "100% Phone Compatibility", desc: "Works seamlessly on all smartphones with instant contactless tap and QR backup." }
     ],
     specs: [
       { value: "LIFETIME", label: "Card Validity" },
@@ -29,8 +29,8 @@ export const INITIAL_SITE_CONTENT = {
   },
   branding: {
     name: "Tap Card",
-    tagline: "Smart Contactless Business & Review Cards",
-    footerText: "Tap Card is India's premier contactless smart networking solution. We manufacture durable, precision-engineered smart business cards and Google review tap cards for professionals, clinics, and enterprises.",
+    tagline: "Smart Contactless Business, Review & Facility Cards",
+    footerText: "Tap Card is India's premier contactless smart networking solution. We manufacture durable, precision-engineered smart business cards and Google review tap cards for restaurants, fashion stores, clinics, hospitals, and enterprises.",
   }
 };
 

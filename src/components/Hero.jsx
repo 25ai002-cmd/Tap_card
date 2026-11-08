@@ -1,6 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { SmartNfcCardMockup } from './SmartNfcCardMockup';
-import { Sparkles, ArrowRight, Zap, CheckCircle2 } from 'lucide-react';
+import { 
+  Sparkles, 
+  ArrowRight, 
+  Zap, 
+  CheckCircle2, 
+  TrendingUp, 
+  Building2, 
+  Utensils, 
+  Shirt, 
+  Stethoscope, 
+  Star 
+} from 'lucide-react';
 
 export const Hero = ({ siteContent, onOpenSimulator, onOpenInquire }) => {
   const hero = siteContent?.hero || {};
@@ -19,37 +30,104 @@ export const Hero = ({ siteContent, onOpenSimulator, onOpenInquire }) => {
           
           {/* Left Column: Headline, Value Proposition, Action CTAs */}
           <div className="lg:col-span-7 space-y-6 sm:space-y-7 text-center lg:text-left">
+            
+            {/* Top Pill Announcement */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-50/90 border border-sky-200/90 text-sky-800 text-xs font-semibold shadow-xs">
+              <TrendingUp className="w-3.5 h-3.5 text-sky-600 shrink-0" />
+              <span>{hero.badge || "Helping Businesses Scale & Build 5-Star Trust"}</span>
+            </div>
+
             {/* Main Headline */}
             <h1 className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-extrabold font-heading text-slate-900 tracking-tight leading-[1.14]">
-              Precision Contactless Cards for{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-600 via-blue-600 to-indigo-700">
-                Google Reviews, Portfolios
-              </span>{' '}
-              & Smart Networking.
+              {hero.title && !hero.title.includes('Helping Businesses Grow') ? (
+                hero.title
+              ) : (
+                <>
+                  Helping Businesses Grow with{' '}
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-600 via-blue-600 to-indigo-700">
+                    Faster Google Reviews
+                  </span>{' '}
+                  & Smart Customer Facilities.
+                </>
+              )}
             </h1>
 
             {/* Subtitle */}
             <p className="text-sm sm:text-base lg:text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
-              {hero.subtitle || "Custom-manufactured contactless hardware for businesses, freelancers, and creative studios. Choose your card plan — Google reviews, creative portfolios, company websites with QR codes, or lead generation forms. One-time hardware purchase with lifetime smart tap access."}
+              {hero.subtitle || "Customers look at Google reviews and available facilities before choosing a restaurant, clothing store, clinic, or hospital. We help your business collect 5-star Google reviews 10x faster at checkout, while giving customers instant contactless access to your digital menus, style catalogues, appointment booking, Wi-Fi, and location directions."}
             </p>
+
+            {/* Industry-Specific Growth & Facilities Showcase */}
+            <div className="p-4 sm:p-5 rounded-2xl bg-white/90 border border-slate-200/90 shadow-sm backdrop-blur-md space-y-3">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-slate-700 font-mono flex items-center gap-1.5">
+                  <Building2 className="w-3.5 h-3.5 text-sky-600" />
+                  <span>Tailored for High-Traffic Businesses:</span>
+                </span>
+                <span className="text-[10px] font-bold text-sky-700 bg-sky-50 px-2.5 py-0.5 rounded-full border border-sky-200">
+                  Reviews + Key Facilities on 1 Tap
+                </span>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-left">
+                {/* 1. Food & Restaurants */}
+                <div className="p-3 rounded-xl bg-gradient-to-br from-amber-50/60 to-orange-50/40 border border-amber-200/80 hover:border-amber-300 transition-all">
+                  <div className="flex items-center gap-2 text-xs font-bold text-slate-900 mb-1">
+                    <span className="w-6 h-6 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center shrink-0">
+                      <Utensils className="w-3.5 h-3.5" />
+                    </span>
+                    <span>Food & Restaurants</span>
+                  </div>
+                  <p className="text-[11px] text-slate-600 leading-snug">
+                    <strong className="text-amber-800">1-Tap Google Reviews</strong> on dining tables + <span className="text-slate-500">Instant Digital Menu, Daily Specials & Wi-Fi.</span>
+                  </p>
+                </div>
+
+                {/* 2. Dressing & Fashion */}
+                <div className="p-3 rounded-xl bg-gradient-to-br from-purple-50/60 to-pink-50/40 border border-purple-200/80 hover:border-purple-300 transition-all">
+                  <div className="flex items-center gap-2 text-xs font-bold text-slate-900 mb-1">
+                    <span className="w-6 h-6 rounded-lg bg-purple-100 text-purple-700 flex items-center justify-center shrink-0">
+                      <Shirt className="w-3.5 h-3.5" />
+                    </span>
+                    <span>Fashion & Dressing</span>
+                  </div>
+                  <p className="text-[11px] text-slate-600 leading-snug">
+                    <strong className="text-purple-800">Customer Style Ratings</strong> at checkout + <span className="text-slate-500">Digital Lookbook, Instagram Catalog & Offers.</span>
+                  </p>
+                </div>
+
+                {/* 3. Hospitals & Clinics */}
+                <div className="p-3 rounded-xl bg-gradient-to-br from-sky-50/60 to-blue-50/40 border border-sky-200/80 hover:border-sky-300 transition-all">
+                  <div className="flex items-center gap-2 text-xs font-bold text-slate-900 mb-1">
+                    <span className="w-6 h-6 rounded-lg bg-sky-100 text-sky-700 flex items-center justify-center shrink-0">
+                      <Stethoscope className="w-3.5 h-3.5" />
+                    </span>
+                    <span>Hospitals & Clinics</span>
+                  </div>
+                  <p className="text-[11px] text-slate-600 leading-snug">
+                    <strong className="text-sky-800">Patient Trust Feedback</strong> on discharge + <span className="text-slate-500">Doctor Profiles, OPD Timings & Fast Booking.</span>
+                  </p>
+                </div>
+              </div>
+            </div>
 
             {/* Concrete Key Value Pillars */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3 pt-1 text-left max-w-xl mx-auto lg:mx-0">
               <div className="flex items-center gap-2.5 text-xs font-semibold text-slate-700 bg-white/60 p-2.5 rounded-xl border border-slate-200/70 shadow-[0_1px_2px_rgba(0,0,0,0.02)] backdrop-blur-sm">
                 <CheckCircle2 className="w-4 h-4 text-sky-600 shrink-0" />
-                <span>One-Time Hardware, Lifetime Card Validity</span>
+                <span>10x More 5-Star Google Reviews at Checkout</span>
               </div>
               <div className="flex items-center gap-2.5 text-xs font-semibold text-slate-700 bg-white/60 p-2.5 rounded-xl border border-slate-200/70 shadow-[0_1px_2px_rgba(0,0,0,0.02)] backdrop-blur-sm">
                 <CheckCircle2 className="w-4 h-4 text-sky-600 shrink-0" />
-                <span>Direct destination URL (Google Maps/Site)</span>
+                <span>Integrated Facilities (Menus, Bookings, Catalogs)</span>
               </div>
               <div className="flex items-center gap-2.5 text-xs font-semibold text-slate-700 bg-white/60 p-2.5 rounded-xl border border-slate-200/70 shadow-[0_1px_2px_rgba(0,0,0,0.02)] backdrop-blur-sm">
                 <CheckCircle2 className="w-4 h-4 text-sky-600 shrink-0" />
-                <span>Waterproof, UV-etched scratch resistance</span>
+                <span>Lifetime Smart Card, Zero Monthly Fees</span>
               </div>
               <div className="flex items-center gap-2.5 text-xs font-semibold text-slate-700 bg-white/60 p-2.5 rounded-xl border border-slate-200/70 shadow-[0_1px_2px_rgba(0,0,0,0.02)] backdrop-blur-sm">
                 <CheckCircle2 className="w-4 h-4 text-sky-600 shrink-0" />
-                <span>Digital vector layout proof before production</span>
+                <span>Contactless Tap + High-Contrast QR Backup</span>
               </div>
             </div>
 
@@ -59,7 +137,7 @@ export const Hero = ({ siteContent, onOpenSimulator, onOpenInquire }) => {
                 href="#customizer"
                 className="glass-button-primary w-full sm:w-auto px-7 py-3.5 rounded-xl text-sm font-semibold text-white inline-flex items-center justify-center gap-2 shadow-lg group"
               >
-                <span>Configure Your Hardware</span>
+                <span>Equip Your Business</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
 

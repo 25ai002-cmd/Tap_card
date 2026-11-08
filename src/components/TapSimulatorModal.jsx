@@ -1,12 +1,33 @@
 import React, { useState } from 'react';
-import { X, Star, ExternalLink, Download, Instagram, Linkedin, Globe, Phone, Check, Wifi, Sparkles } from 'lucide-react';
+import { 
+  X, 
+  Star, 
+  ExternalLink, 
+  Download, 
+  Instagram, 
+  Linkedin, 
+  Globe, 
+  Phone, 
+  Check, 
+  Wifi, 
+  Sparkles,
+  Utensils,
+  Shirt,
+  Stethoscope,
+  Calendar,
+  BookOpen,
+  MapPin,
+  Clock
+} from 'lucide-react';
 
 export const TapSimulatorModal = ({ isOpen, onClose }) => {
-  const [activeScreen, setActiveScreen] = useState('review'); // 'review' | 'portfolio' | 'social'
+  const [activeScreen, setActiveScreen] = useState('review'); // 'review' | 'facilities' | 'portfolio' | 'social'
+  const [facilityType, setFacilityType] = useState('restaurant'); // 'restaurant' | 'fashion' | 'clinic'
   const [tapEffect, setTapEffect] = useState(false);
   const [simulatedRating, setSimulatedRating] = useState(5);
   const [reviewSubmitted, setReviewSubmitted] = useState(false);
   const [contactSaved, setContactSaved] = useState(false);
+  const [facilityActionDone, setFacilityActionDone] = useState('');
 
   if (!isOpen) return null;
 
@@ -53,15 +74,25 @@ export const TapSimulatorModal = ({ isOpen, onClose }) => {
             <span>Interactive Tap Experience</span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-bold font-heading text-slate-900">
-            What You Experience in 1 Tap
+            What Customers Experience in 1 Tap
           </h2>
           <p className="text-xs sm:text-sm text-slate-500 mt-1.5">
-            Test how the card instantly triggers Google reviews, creative portfolios, websites, and inquiry forms on your phone.
+            Test how smart cards help businesses collect Google reviews faster while instantly presenting essential facilities.
           </p>
         </div>
 
         {/* Tab Selector */}
         <div className="flex flex-wrap items-center justify-center gap-2 mb-6">
+          <button
+            onClick={() => { setActiveScreen('facilities'); handleSimulateTap(); }}
+            className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all ${
+              activeScreen === 'facilities'
+                ? 'bg-gradient-to-r from-sky-600 to-blue-700 text-white shadow-md shadow-sky-500/25 scale-[1.02]'
+                : 'bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200'
+            }`}
+          >
+            🏢 Business Reviews & Facilities
+          </button>
           <button
             onClick={() => { setActiveScreen('review'); handleSimulateTap(); }}
             className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all ${
@@ -70,7 +101,7 @@ export const TapSimulatorModal = ({ isOpen, onClose }) => {
                 : 'bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200'
             }`}
           >
-            ⭐ Google Review Tap
+            ⭐ Direct Google Review Tap
           </button>
           <button
             onClick={() => { setActiveScreen('portfolio'); handleSimulateTap(); }}
@@ -105,8 +136,8 @@ export const TapSimulatorModal = ({ isOpen, onClose }) => {
                   1
                 </div>
                 <div>
-                  <h4 className="text-sm font-semibold text-slate-900">Contactless Tap</h4>
-                  <p className="text-xs text-slate-500">Customer taps their phone on your card</p>
+                  <h4 className="text-sm font-semibold text-slate-900">Contactless Tap at Counter or Table</h4>
+                  <p className="text-xs text-slate-500">Customer taps their smartphone against the smart card</p>
                 </div>
               </div>
 
@@ -115,8 +146,8 @@ export const TapSimulatorModal = ({ isOpen, onClose }) => {
                   2
                 </div>
                 <div>
-                  <h4 className="text-sm font-semibold text-slate-900">Instant Smart Tap Detection</h4>
-                  <p className="text-xs text-slate-500">Popup appears on your phone automatically</p>
+                  <h4 className="text-sm font-semibold text-slate-900">Instant Screen Launch (0.1s)</h4>
+                  <p className="text-xs text-slate-500">Opens verified Google review prompt and business facilities</p>
                 </div>
               </div>
 
@@ -125,8 +156,8 @@ export const TapSimulatorModal = ({ isOpen, onClose }) => {
                   3
                 </div>
                 <div>
-                  <h4 className="text-sm font-semibold text-slate-900">Immediate Action</h4>
-                  <p className="text-xs text-slate-500">Submit your review, view work, or save contact details instantly</p>
+                  <h4 className="text-sm font-semibold text-slate-900">More Reviews & Higher Retention</h4>
+                  <p className="text-xs text-slate-500">5-star rating submitted in 5 seconds while accessing key services</p>
                 </div>
               </div>
             </div>
@@ -138,20 +169,20 @@ export const TapSimulatorModal = ({ isOpen, onClose }) => {
                 className="w-full relative group glass-button-primary py-3 px-5 rounded-xl text-xs sm:text-sm font-bold text-white flex items-center justify-center gap-2 overflow-hidden shadow-sm"
               >
                 <Wifi className="w-4 h-4 rotate-90 text-sky-200 group-hover:scale-125 transition-transform" />
-                <span>Simulate Tap Again</span>
+                <span>Simulate Smartphone Tap</span>
                 {tapEffect && (
                   <span className="absolute inset-0 bg-white/40 animate-ping rounded-xl pointer-events-none" />
                 )}
               </button>
               <p className="text-[11px] text-slate-500 mt-2">
-                Simulates real contactless smart chip instant trigger
+                Simulates real contactless chip trigger (no app download required)
               </p>
             </div>
           </div>
 
           {/* Right Column: Realistic Smartphone Mockup */}
           <div className="md:col-span-7 flex justify-center">
-            <div className="relative w-[300px] sm:w-[330px] h-[580px] bg-slate-900 rounded-[44px] p-3 border-4 border-slate-700 shadow-2xl flex flex-col justify-between overflow-hidden">
+            <div className="relative w-[310px] sm:w-[340px] h-[600px] bg-slate-900 rounded-[44px] p-3 border-4 border-slate-700 shadow-2xl flex flex-col justify-between overflow-hidden">
               
               {/* Dynamic Island / Notch */}
               <div className="absolute top-4 left-1/2 -translate-x-1/2 w-28 h-5 bg-black rounded-full z-20 flex items-center justify-end px-3">
@@ -166,7 +197,7 @@ export const TapSimulatorModal = ({ isOpen, onClose }) => {
                   </div>
                   <div className="text-left text-xs">
                     <p className="font-semibold text-[11px] text-slate-900">Smart Tap Detected</p>
-                    <p className="text-[10px] text-slate-500">Opening destination link...</p>
+                    <p className="text-[10px] text-slate-500">Opening business reviews & facilities...</p>
                   </div>
                 </div>
               )}
@@ -174,6 +205,208 @@ export const TapSimulatorModal = ({ isOpen, onClose }) => {
               {/* PHONE SCREEN CONTENT */}
               <div className="w-full h-full bg-slate-950 rounded-[34px] overflow-y-auto pt-10 pb-4 px-3.5 text-slate-100 flex flex-col justify-between border border-white/5">
                 
+                {/* 0. BUSINESS REVIEWS & FACILITIES SCREEN */}
+                {activeScreen === 'facilities' && (
+                  <div className="space-y-3">
+                    {/* Industry Selector Pills Inside Phone */}
+                    <div className="flex items-center justify-between gap-1 bg-white/5 p-1 rounded-xl border border-white/10">
+                      <button
+                        onClick={() => { setFacilityType('restaurant'); setFacilityActionDone(''); }}
+                        className={`flex-1 py-1 px-1 rounded-lg text-[10px] font-semibold flex items-center justify-center gap-1 transition-all ${
+                          facilityType === 'restaurant'
+                            ? 'bg-amber-500 text-white shadow-xs'
+                            : 'text-slate-400 hover:text-white'
+                        }`}
+                      >
+                        <Utensils className="w-3 h-3" />
+                        <span>Dining</span>
+                      </button>
+                      <button
+                        onClick={() => { setFacilityType('fashion'); setFacilityActionDone(''); }}
+                        className={`flex-1 py-1 px-1 rounded-lg text-[10px] font-semibold flex items-center justify-center gap-1 transition-all ${
+                          facilityType === 'fashion'
+                            ? 'bg-purple-600 text-white shadow-xs'
+                            : 'text-slate-400 hover:text-white'
+                        }`}
+                      >
+                        <Shirt className="w-3 h-3" />
+                        <span>Fashion</span>
+                      </button>
+                      <button
+                        onClick={() => { setFacilityType('clinic'); setFacilityActionDone(''); }}
+                        className={`flex-1 py-1 px-1 rounded-lg text-[10px] font-semibold flex items-center justify-center gap-1 transition-all ${
+                          facilityType === 'clinic'
+                            ? 'bg-sky-600 text-white shadow-xs'
+                            : 'text-slate-400 hover:text-white'
+                        }`}
+                      >
+                        <Stethoscope className="w-3 h-3" />
+                        <span>Clinic</span>
+                      </button>
+                    </div>
+
+                    {/* Business Profile Header */}
+                    <div className="p-3 rounded-2xl bg-white/5 border border-white/10 text-center">
+                      <h4 className="text-xs font-bold text-white">
+                        {facilityType === 'restaurant' && "The Olive Bistro & Woodfire"}
+                        {facilityType === 'fashion' && "Aura Couture & Studio"}
+                        {facilityType === 'clinic' && "MetroCare Multi-Speciality Clinic"}
+                      </h4>
+                      <div className="flex items-center justify-center gap-1.5 mt-1">
+                        <span className="flex text-amber-400 text-[10px]">★★★★★</span>
+                        <span className="text-[10px] text-slate-300 font-semibold">4.9 (520+ Reviews)</span>
+                      </div>
+                    </div>
+
+                    {/* Priority Feature 1: Instant Google Review */}
+                    <div className="p-3 rounded-2xl bg-gradient-to-r from-blue-900/60 to-indigo-900/60 border border-blue-500/40 text-center space-y-2">
+                      <div className="flex items-center justify-between text-[11px] font-bold text-white">
+                        <span className="flex items-center gap-1.5">
+                          <Star className="w-3.5 h-3.5 text-amber-400 fill-amber-400" />
+                          <span>Leave a 5-Star Google Review</span>
+                        </span>
+                        <span className="text-[9px] bg-blue-500/30 text-blue-200 px-1.5 py-0.5 rounded">0.1s Fast</span>
+                      </div>
+                      <p className="text-[10px] text-slate-300 text-left">
+                        {facilityType === 'restaurant' && "Loved the food and service? Tap 5 stars to help our chefs grow!"}
+                        {facilityType === 'fashion' && "Loved your outfit and trial experience? Share your feedback on Google."}
+                        {facilityType === 'clinic' && "Satisfied with doctor care and clinic hygiene? Review us publicly on Google."}
+                      </p>
+                      <button
+                        onClick={() => { setReviewSubmitted(true); setFacilityActionDone('review'); }}
+                        className="w-full py-2 rounded-xl bg-gradient-to-r from-amber-400 to-orange-400 text-slate-950 font-bold text-xs flex items-center justify-center gap-1.5 shadow-md"
+                      >
+                        <Star className="w-3.5 h-3.5 fill-slate-950" />
+                        <span>Submit 5-Star Review to Google</span>
+                      </button>
+                    </div>
+
+                    {/* Priority Feature 2: Industry Specific Facilities */}
+                    <div className="space-y-1.5">
+                      <p className="text-[10px] font-bold uppercase tracking-wider text-slate-400 px-1">
+                        Available On-Tap Facilities:
+                      </p>
+
+                      {facilityType === 'restaurant' && (
+                        <>
+                          <button 
+                            onClick={() => setFacilityActionDone('menu')}
+                            className="w-full p-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 flex items-center justify-between text-left text-xs text-white"
+                          >
+                            <span className="flex items-center gap-2">
+                              <BookOpen className="w-3.5 h-3.5 text-amber-400" />
+                              <span className="text-[11px]">Digital Menu & Specials</span>
+                            </span>
+                            <span className="text-[9px] text-slate-400">PDF / Live</span>
+                          </button>
+
+                          <button 
+                            onClick={() => setFacilityActionDone('wifi')}
+                            className="w-full p-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 flex items-center justify-between text-left text-xs text-white"
+                          >
+                            <span className="flex items-center gap-2">
+                              <Wifi className="w-3.5 h-3.5 text-sky-400" />
+                              <span className="text-[11px]">Connect Guest High-Speed Wi-Fi</span>
+                            </span>
+                            <span className="text-[9px] text-emerald-400">1-Tap Connect</span>
+                          </button>
+
+                          <button 
+                            onClick={() => setFacilityActionDone('table')}
+                            className="w-full p-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 flex items-center justify-between text-left text-xs text-white"
+                          >
+                            <span className="flex items-center gap-2">
+                              <Calendar className="w-3.5 h-3.5 text-orange-400" />
+                              <span className="text-[11px]">Reserve Table for Next Visit</span>
+                            </span>
+                            <span className="text-[9px] text-slate-400">WhatsApp</span>
+                          </button>
+                        </>
+                      )}
+
+                      {facilityType === 'fashion' && (
+                        <>
+                          <button 
+                            onClick={() => setFacilityActionDone('lookbook')}
+                            className="w-full p-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 flex items-center justify-between text-left text-xs text-white"
+                          >
+                            <span className="flex items-center gap-2">
+                              <BookOpen className="w-3.5 h-3.5 text-purple-400" />
+                              <span className="text-[11px]">Digital Style Lookbook & Catalog</span>
+                            </span>
+                            <span className="text-[9px] text-purple-300">New Arrivals</span>
+                          </button>
+
+                          <button 
+                            onClick={() => setFacilityActionDone('instagram')}
+                            className="w-full p-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 flex items-center justify-between text-left text-xs text-white"
+                          >
+                            <span className="flex items-center gap-2">
+                              <Instagram className="w-3.5 h-3.5 text-pink-400" />
+                              <span className="text-[11px]">Instagram Styling Inspiration</span>
+                            </span>
+                            <span className="text-[9px] text-slate-400">@auracouture</span>
+                          </button>
+
+                          <button 
+                            onClick={() => setFacilityActionDone('stylist')}
+                            className="w-full p-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 flex items-center justify-between text-left text-xs text-white"
+                          >
+                            <span className="flex items-center gap-2">
+                              <Phone className="w-3.5 h-3.5 text-emerald-400" />
+                              <span className="text-[11px]">WhatsApp Personal Stylist & Sizing</span>
+                            </span>
+                            <span className="text-[9px] text-emerald-400">Instant</span>
+                          </button>
+                        </>
+                      )}
+
+                      {facilityType === 'clinic' && (
+                        <>
+                          <button 
+                            onClick={() => setFacilityActionDone('doctor')}
+                            className="w-full p-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 flex items-center justify-between text-left text-xs text-white"
+                          >
+                            <span className="flex items-center gap-2">
+                              <Stethoscope className="w-3.5 h-3.5 text-sky-400" />
+                              <span className="text-[11px]">Doctor Profiles & Specialities</span>
+                            </span>
+                            <span className="text-[9px] text-slate-400">Full Staff</span>
+                          </button>
+
+                          <button 
+                            onClick={() => setFacilityActionDone('opd')}
+                            className="w-full p-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 flex items-center justify-between text-left text-xs text-white"
+                          >
+                            <span className="flex items-center gap-2">
+                              <Clock className="w-3.5 h-3.5 text-amber-400" />
+                              <span className="text-[11px]">OPD & Consultation Timings</span>
+                            </span>
+                            <span className="text-[9px] text-amber-300">Live</span>
+                          </button>
+
+                          <button 
+                            onClick={() => setFacilityActionDone('booking')}
+                            className="w-full p-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 flex items-center justify-between text-left text-xs text-white"
+                          >
+                            <span className="flex items-center gap-2">
+                              <Calendar className="w-3.5 h-3.5 text-emerald-400" />
+                              <span className="text-[11px]">Book Next Patient Appointment</span>
+                            </span>
+                            <span className="text-[9px] text-emerald-400">Direct</span>
+                          </button>
+                        </>
+                      )}
+                    </div>
+
+                    {facilityActionDone && (
+                      <div className="p-2 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-center text-[10px] text-emerald-300 animate-fadeIn">
+                        ✓ Facility triggered instantly on customer's phone!
+                      </div>
+                    )}
+                  </div>
+                )}
+
                 {/* 1. GOOGLE REVIEW SCREEN */}
                 {activeScreen === 'review' && (
                   <div className="space-y-4">
@@ -232,7 +465,7 @@ export const TapSimulatorModal = ({ isOpen, onClose }) => {
                       </div>
                     )}
                     <p className="text-[9px] text-slate-500 text-center pt-2">
-                      Official Google Business Profile API Link
+                      Official Google Business Profile Direct Tap
                     </p>
                   </div>
                 )}

@@ -607,6 +607,38 @@ export const AdminDashboard = ({ isOpen, onClose, onRefreshData }) => {
 
                     <div>
                       <label className="block text-xs font-medium text-slate-700 mb-1">
+                        Hero Badge / Growth Headline
+                      </label>
+                      <input
+                        type="text"
+                        value={siteContent.hero.badge || ''}
+                        onChange={(e) => setSiteContent({
+                          ...siteContent,
+                          hero: { ...siteContent.hero, badge: e.target.value }
+                        })}
+                        placeholder="e.g. Helping Businesses Scale & Build 5-Star Trust"
+                        className="w-full px-3 py-2 rounded-xl glass-input text-xs"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-xs font-medium text-slate-700 mb-1">
+                        Hero Main Heading Title
+                      </label>
+                      <input
+                        type="text"
+                        value={siteContent.hero.title || ''}
+                        onChange={(e) => setSiteContent({
+                          ...siteContent,
+                          hero: { ...siteContent.hero, title: e.target.value }
+                        })}
+                        placeholder="e.g. Helping Businesses Grow with Faster Google Reviews & Smart Facilities."
+                        className="w-full px-3 py-2 rounded-xl glass-input text-xs"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-xs font-medium text-slate-700 mb-1">
                         Announcement Top Banner
                       </label>
                       <input

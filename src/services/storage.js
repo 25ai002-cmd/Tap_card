@@ -44,7 +44,12 @@ export const storage = {
       const data = localStorage.getItem(KEYS.SITE_CONTENT);
       if (!data) return INITIAL_SITE_CONTENT;
       const parsed = JSON.parse(data);
-      if (parsed?.hero?.announcement?.includes('NFC') || parsed?.branding?.tagline?.includes('NFC')) {
+      if (
+        parsed?.hero?.announcement?.includes('NFC') || 
+        parsed?.branding?.tagline?.includes('NFC') ||
+        parsed?.hero?.title?.includes('Precision Contactless Cards for Reviews') ||
+        parsed?.hero?.title?.includes('Precision Contactless Cards for Google Reviews')
+      ) {
         localStorage.setItem(KEYS.SITE_CONTENT, JSON.stringify(INITIAL_SITE_CONTENT));
         return INITIAL_SITE_CONTENT;
       }
