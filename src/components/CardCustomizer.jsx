@@ -7,8 +7,8 @@ import { CARD_COLOR_PRESETS, getAutoFontTheme } from '../utils/cardColorUtils';
 
 export const CardCustomizer = ({ selectedProduct, onOpenSimulator, siteContent, currentUser, onRequireLogin }) => {
   const [purpose, setPurpose] = useState(selectedProduct ? selectedProduct.name : "Google 5-Star Review Tap Card Plan");
-  const [cardColor, setCardColor] = useState("#121316");
-  const [material, setMaterial] = useState("Matte Jet Black");
+  const [cardColor, setCardColor] = useState("#cbd5e1");
+  const [material, setMaterial] = useState("Anodized Silver");
   const [businessName, setBusinessName] = useState("Apex Fitness Studio");
   const [targetUrl, setTargetUrl] = useState("https://maps.google.com/...");
   const [logoPreview, setLogoPreview] = useState(null);

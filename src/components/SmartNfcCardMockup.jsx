@@ -70,7 +70,10 @@ function renderQRCode(seedStr, qrBg) {
 }
 
 export const SmartNfcCardMockup = ({ onOpenSimulator }) => {
-  const [selectedFinish, setSelectedFinish] = useState(finishes[0]);
+  // Default to Anodized Silver Aluminum
+  const [selectedFinish, setSelectedFinish] = useState(
+    finishes.find(f => f.id === "silver") || finishes[1]
+  );
   const [businessName, setBusinessName] = useState("Apex Fitness Studio");
   const [phone, setPhone] = useState("+91 98765 43210");
   const [actionKey, setActionKey] = useState("review");
