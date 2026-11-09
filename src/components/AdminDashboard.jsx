@@ -406,6 +406,41 @@ export const AdminDashboard = ({ isOpen, onClose, onRefreshData }) => {
                               "{inq.customNotes || "No extra instructions provided"}"
                             </p>
 
+                            {/* Uploaded Existing Business Card (1:1 Clone Photos) */}
+                            {(inq.existingCardFront || inq.existingCardBack) && (
+                              <div className="p-3 rounded-xl bg-sky-50/80 border border-sky-200/90 space-y-2 mt-2">
+                                <p className="text-[11px] font-bold text-sky-900 flex items-center gap-1.5">
+                                  <span>🖨️ Customer's Existing Card Photos (Replicate 1:1):</span>
+                                </p>
+                                <div className="flex flex-wrap gap-3">
+                                  {inq.existingCardFront && (
+                                    <div>
+                                      <span className="text-[10px] text-slate-500 font-mono block mb-1">Front Side:</span>
+                                      <a href={inq.existingCardFront} target="_blank" rel="noreferrer" title="Click to open full resolution">
+                                        <img 
+                                          src={inq.existingCardFront} 
+                                          alt="Existing Card Front" 
+                                          className="h-16 w-28 object-cover rounded-lg border border-slate-300 shadow-xs hover:scale-105 transition-transform" 
+                                        />
+                                      </a>
+                                    </div>
+                                  )}
+                                  {inq.existingCardBack && (
+                                    <div>
+                                      <span className="text-[10px] text-slate-500 font-mono block mb-1">Back Side:</span>
+                                      <a href={inq.existingCardBack} target="_blank" rel="noreferrer" title="Click to open full resolution">
+                                        <img 
+                                          src={inq.existingCardBack} 
+                                          alt="Existing Card Back" 
+                                          className="h-16 w-28 object-cover rounded-lg border border-slate-300 shadow-xs hover:scale-105 transition-transform" 
+                                        />
+                                      </a>
+                                    </div>
+                                  )}
+                                </div>
+                              </div>
+                            )}
+
                             <div className="flex flex-wrap items-center gap-4 text-xs text-slate-500 pt-1">
                               <span className="flex items-center gap-1 text-slate-700">
                                 <Mail className="w-3.5 h-3.5 text-sky-600" />

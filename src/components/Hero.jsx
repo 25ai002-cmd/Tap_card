@@ -11,7 +11,8 @@ import {
   Shirt, 
   Stethoscope, 
   Star,
-  Globe
+  Globe,
+  Copy
 } from 'lucide-react';
 
 export const Hero = ({ siteContent, onOpenSimulator, onOpenInquire }) => {
@@ -131,6 +132,30 @@ export const Hero = ({ siteContent, onOpenSimulator, onOpenInquire }) => {
                 <span>Contactless Tap + High-Contrast QR Backup</span>
               </div>
             </div>
+
+            {/* Existing Business Card Clone Callout Banner */}
+            <a 
+              href="#customizer" 
+              className="flex items-center justify-between p-3 rounded-2xl bg-gradient-to-r from-sky-50/90 to-blue-50/90 border border-sky-200/90 hover:border-sky-400 transition-all shadow-xs group text-left"
+            >
+              <div className="flex items-center gap-2.5">
+                <div className="w-8 h-8 rounded-xl bg-sky-600 text-white flex items-center justify-center shrink-0 shadow-xs">
+                  <Copy className="w-4 h-4" />
+                </div>
+                <div>
+                  <p className="text-xs font-bold text-slate-900 group-hover:text-sky-800 transition-colors">
+                    Already have a simple business card?
+                  </p>
+                  <p className="text-[11px] text-slate-600">
+                    Upload front & back photos — we copy your entire design 1:1 and turn it into a Tap Card.
+                  </p>
+                </div>
+              </div>
+              <span className="text-[11px] font-bold text-sky-700 bg-white px-2.5 py-1 rounded-lg border border-sky-200 shadow-2xs shrink-0 group-hover:translate-x-0.5 transition-transform hidden sm:inline-flex items-center gap-1">
+                <span>Upload Photos</span>
+                <ArrowRight className="w-3 h-3" />
+              </span>
+            </a>
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3 sm:gap-3.5 pt-2">

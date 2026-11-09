@@ -13,9 +13,29 @@ export const InquiryModal = ({ isOpen, onClose, selectedProduct, siteContent, cu
   const [quantity, setQuantity] = useState(10);
   const [targetUrl, setTargetUrl] = useState('');
   const [customNotes, setCustomNotes] = useState('');
+  const [existingCardFront, setExistingCardFront] = useState(null);
+  const [existingCardBack, setExistingCardBack] = useState(null);
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [emailSentViaBrevo, setEmailSentViaBrevo] = useState(false);
+
+  const handleFrontUpload = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => setExistingCardFront(reader.result);
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const handleBackUpload = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => setExistingCardBack(reader.result);
+      reader.readAsDataURL(file);
+    }
+  };
 
   useEffect(() => {
     if (selectedProduct) {
@@ -56,6 +76,8 @@ export const InquiryModal = ({ isOpen, onClose, selectedProduct, siteContent, cu
       material,
       quantity: Number(quantity),
       targetUrl,
+      existingCardFront,
+      existingCardBack,
       customNotes,
       date: new Date().toISOString(),
     };
@@ -235,6 +257,26 @@ export const InquiryModal = ({ isOpen, onClose, selectedProduct, siteContent, cu
                 placeholder="e.g. Google Maps Review URL or portfolio link"
                 className="w-full px-3 py-2 rounded-xl glass-input text-xs"
               />
+            </div>
+
+            {/* Optional 1:1 Existing Business Card Photos */}
+            <div className="p-3 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+              <label className="block text-xs font-bold text-slate-800">
+                Have an existing business card design? (Optional)
+              </label>
+              <p className="text-[11px] text-slate-500">
+                Upload front and back photos — we'll copy your exact design 1:1 into a contactless Tap Card.
+              </p>
+              <div className="grid grid-cols-2 gap-2">
+                <label className="p-2.5 rounded-xl bg-white border border-dashed border-slate-300 hover:border-sky-500 text-center text-[11px] text-slate-700 font-semibold cursor-pointer block transition-colors shadow-2xs">
+                  <span className="truncate block">{existingCardFront ? '✓ Front Card Attached' : '+ Upload Front Photo'}</span>
+                  <input type="file" accept="image/*" onChange={handleFrontUpload} className="hidden" />
+                </label>
+                <label className="p-2.5 rounded-xl bg-white border border-dashed border-slate-300 hover:border-sky-500 text-center text-[11px] text-slate-700 font-semibold cursor-pointer block transition-colors shadow-2xs">
+                  <span className="truncate block">{existingCardBack ? '✓ Back Card Attached' : '+ Upload Back Photo'}</span>
+                  <input type="file" accept="image/*" onChange={handleBackUpload} className="hidden" />
+                </label>
+              </div>
             </div>
 
             <div>
